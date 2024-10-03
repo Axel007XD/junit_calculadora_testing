@@ -3,6 +3,8 @@ package com.Axel;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CalculadoraTest extends TestCase {
 
     @Test
@@ -22,9 +24,30 @@ public class CalculadoraTest extends TestCase {
         assertEquals(calculadora.multiplicar(3,3),9.0);
     }
     @Test
-    public void testDivision() {
-        Calculadora calculadora = new Calculadora();
-        assertEquals(calculadora.dividir(3,3),1.0);
+    public void testDivision2() {
+        Calculadora calculadora = new Calculadora(3,3);
+        double numeroA = calculadora.getA();
+        double numeroB = calculadora.getB();
+        if (numeroA<0 || numeroB<0) {
+            throw new NullPointerException("El numero no puede ser negativo");
+        }else{
+            assertEquals(calculadora.dividir(numeroA,numeroB),1.0);
+        }
     }
-  
+    @Test
+    public void testAlertaDivision() {
+
+            Calculadora calculadora = new Calculadora(3,5);
+
+            double numeroA = calculadora.getA();
+            double numeroB = calculadora.getB();
+
+
+            double resultado = numeroA/numeroB;
+
+            assertEquals((numeroA==0||numeroB==0),true);
+
+    }
+
+
 }

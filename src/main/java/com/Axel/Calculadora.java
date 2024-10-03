@@ -2,12 +2,12 @@ package com.Axel;
 
 public class Calculadora {
 
-    private Long a;
-    private Long b;
+    private double a;
+    private double b;
 
     public Calculadora() {
     }
-    public Calculadora(Long a, Long b) {
+    public Calculadora(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -36,4 +36,19 @@ public class Calculadora {
         }
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
 }
